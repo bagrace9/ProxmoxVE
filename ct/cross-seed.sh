@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/bagrace9/ProxmoxVE/cross-seed--add-dependancies-for-node-26/misc/build.func)
 # Copyright (c) 2021-2026 community-scripts ORG
 # Author: Jakub Matraszek (jmatraszek)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
