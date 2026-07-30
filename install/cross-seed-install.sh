@@ -14,7 +14,11 @@ network_check
 update_os
 
 msg_info "Installing Dependencies"
-$STD apt install -y build-essential
+$STD apt install -y \
+  build-essential \
+  pkg-config \
+  python3-dev \
+  libsqlite3-dev
 msg_ok "Installed Dependencies"
 
 NODE_VERSION="26" setup_nodejs
