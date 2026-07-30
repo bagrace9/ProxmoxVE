@@ -21,8 +21,8 @@ $STD apt install -y \
   libsqlite3-dev
 msg_ok "Installed Dependencies"
 
-NODE_VERSION="26" setup_nodejs
-ensure_dependencies build-essential pkg-config python3-dev python-is-python3 libsqlite3-dev
+NODE_VERSION="24" setup_nodejs
+ensure_dependencies build-essential pkg-config python3-dev libsqlite3-dev
 
 msg_info "Setup Cross-Seed"
 # Use --unsafe-perm so npm lifecycle scripts can run correctly inside the container.
