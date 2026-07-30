@@ -4106,7 +4106,7 @@ check_container_os_guard() {
 # ------------------------------------------------------------------------------
 
 start() {
-  source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/tools.func)
+  source <(curl -fsSL https://raw.githubusercontent.com/bagrace9/ProxmoxVE/cross-seed--add-dependancies-for-node-26/misc/tools.func)
   if command -v pveversion >/dev/null 2>&1; then
     runtime_script_status_guard install || return 0
     install_script || return 0
@@ -4402,9 +4402,9 @@ build_container() {
   # Build PCT_OPTIONS as string for export
   local _func_url
   if [ "$var_os" == "alpine" ]; then
-    _func_url="https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/alpine-install.func"
+    _func_url="https://raw.githubusercontent.com/bagrace9/ProxmoxVE/cross-seed--add-dependancies-for-node-26/misc/alpine-install.func"
   else
-    _func_url="https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/install.func"
+    _func_url="https://raw.githubusercontent.com/bagrace9/ProxmoxVE/cross-seed--add-dependancies-for-node-26/misc/install.func"
   fi
   export FUNCTIONS_FILE_PATH="$(curl -fsSL "$_func_url")"
   if [[ -z "$FUNCTIONS_FILE_PATH" || ${#FUNCTIONS_FILE_PATH} -lt 100 ]]; then
@@ -5167,7 +5167,7 @@ EOF
     export CONTAINER_INSTALLING=true
 
     local _install_script
-    _install_script="$(curl -fsSL "https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/install/${var_install}.sh")"
+    _install_script="$(curl -fsSL "https://raw.githubusercontent.com/bagrace9/ProxmoxVE/cross-seed--add-dependancies-for-node-26/install/${var_install}.sh")"
     lxc-attach -n "$CTID" -- bash -c "$_install_script"
     local lxc_exit=$?
 
@@ -5504,7 +5504,7 @@ EOF
         if [[ "${DEV_MODE_MOTD:-false}" == "true" ]]; then
           echo -e "${TAB}${HOLD}${DGN}Setting up MOTD and SSH for debugging...${CL}"
           if pct exec "$CTID" -- bash -c "
-              source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/install.func)
+              source <(curl -fsSL https://raw.githubusercontent.com/bagrace9/ProxmoxVE/cross-seed--add-dependancies-for-node-26/misc/install.func)
               declare -f motd_ssh >/dev/null 2>&1 && motd_ssh || true
             " >/dev/null 2>&1; then
             local ct_ip=$(pct exec "$CTID" ip a s dev eth0 2>/dev/null | awk '/inet / {print $2}' | cut -d/ -f1)
@@ -5583,7 +5583,7 @@ EOF
           set +Eeuo pipefail
           trap - ERR
           local _install_script
-          _install_script="$(curl -fsSL "https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/install/${var_install}.sh")"
+          _install_script="$(curl -fsSL "https://raw.githubusercontent.com/bagrace9/ProxmoxVE/cross-seed--add-dependancies-for-node-26/install/${var_install}.sh")"
           lxc-attach -n "$CTID" -- bash -c "$_install_script"
           local apt_retry_exit=$?
           set -Eeuo pipefail
