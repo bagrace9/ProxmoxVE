@@ -114,7 +114,7 @@ _bootstrap_source() {
     _bootstrap_die "${url##*/} loaded but incomplete (missing ${probe})"
 }
 
-_FUNC_BASE="https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc"
+_FUNC_BASE="https://raw.githubusercontent.com/bagrace9/ProxmoxVE/cross-seed--add-dependancies-for-node-26/misc"
 _bootstrap_source "$_FUNC_BASE/api.func" post_to_api
 _bootstrap_source "$_FUNC_BASE/core.func" load_functions
 _bootstrap_source "$_FUNC_BASE/error_handler.func" catch_errors
