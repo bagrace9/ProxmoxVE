@@ -24,7 +24,8 @@ msg_ok "Installed Dependencies"
 NODE_VERSION="26" setup_nodejs
 
 msg_info "Setup Cross-Seed"
-$STD npm install cross-seed@latest -g
+# Use --unsafe-perm so npm lifecycle scripts can run correctly inside the container.
+$STD npm install -g --unsafe-perm cross-seed@latest
 $STD cross-seed gen-config
 msg_ok "Setup Cross-Seed"
 
