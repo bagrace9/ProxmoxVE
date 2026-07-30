@@ -26,7 +26,7 @@ function update_script() {
   check_container_resources
 
   NODE_VERSION="26" setup_nodejs
-  ensure_dependencies build-essential pkg-config python3-dev libsqlite3-dev
+  ensure_dependencies build-essential pkg-config python3-dev python-is-python3 libsqlite3-dev
 
   if command -v cross-seed &>/dev/null; then
     current_version=$(cross-seed --version)
